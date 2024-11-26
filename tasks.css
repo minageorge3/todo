@@ -4,20 +4,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: arial,"Poppins"; */
 }
 :root {
   --primary: #ea40a4;
-  /* --primary: #0099f9; */
   --normal: #3a82ee;
   --important: var(--primary);
   --light: #eee;
   --dark: #313154;
   --grey: #888;
   --delete: #ff5b57;
-  --shadow: 0 1px 3px hsla(0, 0%, 0%, 0.1);
-  --normal-glow: 0 0 5px rgba(58, 130, 238, 0.75);
-  --important-glow: 0 0 5px rgba(234, 64, 228, 0.75);
+  --shadow: 0 1px 3px #0000001a;
+  --normal-glow: 0 0 5px #3a82eebf;
+  --important-glow: 0 0 5px #ea40e4bf;
 }
 body {
   background-color: var(--light);
@@ -71,6 +69,12 @@ h4 {
   width: 100%;
   font-size: 1.2rem;
   border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.copy {
+  font-size: 0.6rem;
+  font-variant: small-caps;
+  text-align: center;
   margin-bottom: 1.5rem;
 }
 .create-todo .options {
@@ -185,8 +189,6 @@ input:checked ~ .bubble::after {
   letter-spacing: 0.1rem;
   color: var(--dark);
   width: 100%;
-  /* background-color: #0000000f; */
-  /* border-radius: .2rem; */
 }
 .todo-item .actions {
   display: flex;
@@ -198,7 +200,6 @@ input:checked ~ .bubble::after {
   padding: 0.5rem;
   border-radius: 0.2rem;
   transition: 0.2s ease-in-out;
-  /* flex: 1 1 0%; */
 }
 .todo-item .actions button:hover {
   opacity: 0.7;
@@ -276,7 +277,7 @@ a:active,
 a:link {
   color: var(--normal);
 }
-/* ... */
-.app.blur form,.app.blur .todo-list{
+.app.blur form,
+.app.blur .todo-list {
   filter: blur(3px);
 }

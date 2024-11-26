@@ -167,6 +167,6 @@ mail_icon.addEventListener("click", () => {
     mail_icon.classList.remove("fa-delete-left");
     mail_icon.classList.add("fa-user");
   }
-  const main=document.querySelector("main")
-  main.classList.toggle("blur")
+  const main = document.querySelector("main");
+  main.classList.toggle("blur");
 });
