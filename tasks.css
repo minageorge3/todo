@@ -21,6 +21,7 @@ body {
   background-color: var(--light);
   color: var(--dark);
   position: relative;
+  font-family: "poppins", "Noto Naskh Arabic", serif;
 }
 input:not([type="radio"]):not([type="checkbox"]),
 button {
@@ -280,4 +281,36 @@ a:link {
 .app.blur form,
 .app.blur .todo-list {
   filter: blur(3px);
+  pointer-events: none;
+}
+body {
+  transition: 0.5s ease-in-out;
+}
+body.dark {
+  color: #fff;
+  background-color: #313154;
+  /* background-color: #24244a; */
+  transition: 0.5s ease-in-out;
+}
+.dark .create-todo .options label {
+  color: #000;
+  background-color: #dddddd;
+  transition: 0.5s ease-in-out;
+}
+.dark .list .todo-item {
+  background-color: #dddddd;
+  transition: 0.5s ease-in-out;
+}
+
+#toggle {
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  right: 1.7rem;
+  top: -1.5rem;
+  transform: rotate(140deg);
+  transition: 0.5s ease-in-out;
+}
+#toggle.rotate {
+  transform: rotate(-140deg);
 }
