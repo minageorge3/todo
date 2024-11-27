@@ -309,7 +309,7 @@ body.dark {
   right: 1.7rem;
   top: -1.5rem;
   transform: rotate(140deg);
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 #toggle.rotate {
   transform: rotate(-140deg);
