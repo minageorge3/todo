@@ -8,7 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
   input_name.addEventListener("change", (e) => {
     window.localStorage.setItem("username", e.target.value);
   });
+  input_name.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      window.localStorage.setItem("username", e.target.value);
+      input_name.blur();
+    }
+  });
 
+  const isDark = JSON.parse(window.localStorage.getItem("isDark")) || false;
+  if (isDark) {
+    document.body.classList.add("dark");
+    toggle.classList.add("rotate");
+  }
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -26,8 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.localStorage.setItem("todos", JSON.stringify(todos));
     e.target.reset();
     displaytodos();
-    // console.log(Array.isArray (todos));
-    // localStorage.clear()
   });
   displaytodos();
 });
@@ -52,7 +61,7 @@ function displaytodos() {
     const span = document.createElement("span");
     span.classList.add("bubble");
 
-    const content = document.createElement("div"); //input
+    const content = document.createElement("div");
     content.classList.add("todo-content");
 
     const actions = document.createElement("div");
@@ -69,8 +78,8 @@ function displaytodos() {
       span.classList.add("normal");
     }
     content.innerHTML = `<input type="text" value="${todo.content}" readonly />`;
-    edit.innerHTML = "Edit";
-    deleteBtn.innerHTML = "Delete";
+    edit.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Edit';
+    deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i> Delete';
     media.appendChild(label);
     media.appendChild(content);
     media.appendChild(actions);
@@ -84,15 +93,17 @@ function displaytodos() {
     function handleSave() {
       const input = content.querySelector("input[type='text']");
       input.setAttribute("readonly", "true");
-      edit.innerHTML = "Edit";
       todo.content = input.value;
+      edit.innerHTML = '<i class="fa-solid fa-check"></i> Saved';
+      setTimeout(() => {
+        edit.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Edit';
+      }, 2000);
       localStorage.setItem("todos", JSON.stringify(todos));
-      displaytodos();
     }
 
     edit.addEventListener("click", () => {
       const input = content.querySelector("input[type='text']");
-      if (edit.innerHTML.toLowerCase() == "edit") {
+      if (edit.innerHTML === '<i class="fa-solid fa-pen-to-square"></i> Edit') {
         input.removeAttribute("readonly");
         input.focus();
         edit.innerHTML = "Save";
@@ -110,11 +121,13 @@ function displaytodos() {
       }
     });
 
-    deleteBtn.addEventListener("click", () => {
+    deleteBtn.addEventListener("click", (e) => {
       todos = todos.filter((t) => t != todo);
       localStorage.setItem("todos", JSON.stringify(todos));
       displaytodos();
     });
+
+    // done ..........
 
     if (todo.done) {
       todoItem.classList.add("done");
@@ -175,4 +188,7 @@ const toggle = document.getElementById("toggle");
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   toggle.classList.toggle("rotate");
+
+  const isDark = document.body.classList.contains("dark");
+  window.localStorage.setItem("isDark", JSON.stringify(isDark));
 });

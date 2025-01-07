@@ -289,7 +289,6 @@ body {
 body.dark {
   color: #fff;
   background-color: #313154;
-  /* background-color: #24244a; */
   transition: 0.5s ease-in-out;
 }
 .dark .create-todo .options label {
