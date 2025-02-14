@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="nav.css" />
+  </head>
+  <body>
+    <main>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="bars">
+        <div class="big firstone">
+          <div class="small" id="small1">
+            <button class="both front" id="front1">
+              <span>🔔</span>notifications
+            </button>
+            <button class="both back" id="back1">
+              <span style="color: #0e70bb">no notifications 🔕</span>
+            </button>
+          </div>
+        </div>
+        <button id="openXO"><span>🆒</span> tic-tac-toe game</button>
+        <a style="text-decoration: none" href="mailto:white_lion_mina@yahoo.com"
+          ><button><span>📧</span>e-mail</button></a
+        >
+        <div class="big">
+          <div class="small" id="small2">
+            <button class="both front" id="front2">
+              <span>❕❗</span>about
+            </button>
+            <button class="both back" id="back2">
+              <span style="color: #0e70bb; font-weight: 700"
+                >design by mina_s_george &copy; 2025</span
+              >
+            </button>
+          </div>
+        </div>
+        <button id="close" class="lastone"><span>❌</span>close</button>
+      </div>
+      <div class="colors">
+        <span
+          class="color"
+          data-color="#222"
+          data-text="#fff"
+          data-label="#000"
+        ></span>
+        <span
+          class="color"
+          data-color="#283056"
+          data-text="#fff"
+          data-label="#222"
+        ></span>
+        <span
+          class="color"
+          data-color="#2C3539"
+          data-text="#fff"
+          data-label="#222"
+        ></span>
+        <span
+          class="color"
+          data-color="#FAF3E0"
+          data-text="#000"
+          data-label="#000"
+        ></span>
+        <span
+          class="color"
+          data-color="#e7e7e7"
+          data-text="#000"
+          data-label="#000"
+        ></span>
+      </div>
+      <section>
+        <h5 class="title">to-do list</h5>
+      </section>
+      <h5 class="create">
+        <span style="color: rgb(14, 147, 219)">❤</span> create a task
+        <span style="color: rgb(14, 147, 219)">❤</span>
+      </h5>
+      <h3 class="name" id="name">
+        hello, <input type="text" placeholder="enter your name..." />
+      </h3>
+
+      <!-- form -->
+      <form id="form">
+        <input
+          type="text"
+          name="name"
+          id="input"
+          placeholder="enter your task here ..."
+        />
+
+        <h5>pick a category</h5>
+        <div class="category">
+          <label class="label">
+            <input type="radio" name="category" value="normal" id="normal" />
+            <span class="bubble normal"></span>
+            <div>normal</div>
+          </label>
+          <label class="label">
+            <input
+              type="radio"
+              name="category"
+              value="important"
+              id="important"
+            />
+            <span class="bubble important"></span>
+
+            <div>important</div>
+          </label>
+        </div>
+        <button>add</button>
+      </form>
+      <br />
+      <hr />
+      <!-- tasks -->
+      <h5 class="title">my tasks</h5>
+      <div id="tasks-list">
+        <!-- <div class="task">
+          <div class="wrap">
+            <label>
+              <input type="checkbox" />
+              <span class="bubble normal"></span>
+            </label>
+            <div class="text">
+              <input
+                class="inner-text"
+                type="text"
+                name="text"
+                readonly
+                placeholder="thank you jesus"
+              />
+            </div>
+          </div>
+          <div class="action">
+            <button class="edit">edit</button>
+            <button class="delete">delete</button>
+          </div>
+        </div> -->
+      </div>
+      <button id="up"></button>
+
+      <br /><br /><br />
+      <hr />
+      <br />
+    </main>
+    <div class="xogame" id="xogame">
+      <h5 class="justin">justin + maritta</h5>
+      <button id="back">back</button>
+      <div id="light">✝</div>
+      <br>
+      <hr />
+      <div class="turn">
+        <h2 class="turnfor">turn for</h2>
+        <div class="turn-box align">x</div>
+        <div class="turn-box align">o</div>
+        <div class="bg"></div>
+      </div>
+      <div class="grid">
+        <div class="box align">0</div>
+        <div class="box align">1</div>
+        <div class="box align">2</div>
+        <div class="box align">3</div>
+        <div class="box align">4</div>
+        <div class="box align">5</div>
+        <div class="box align">6</div>
+        <div class="box align">7</div>
+        <div class="box align">8</div>
+      </div>
+      <h5>by mina_s_george &copy;</h5>
+      <h2 id="result"></h2>
+      <button id="play-again">play again</button>
+    </div>
+    <script src="nav.js"></script>
+  </body>
+</html>
