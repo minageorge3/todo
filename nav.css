@@ -116,7 +116,6 @@ main {
   background-color: #ccccccab;
   align-items: center;
   gap: 1.5rem;
-  /* justify-content: space-between; */
   width: 95%;
   margin: 0.5rem auto;
 }
@@ -198,7 +197,7 @@ main {
 .name input {
   animation: name 2.5s infinite linear;
   transform-origin: 0 0;
-  color: #dc3319;
+  color: #f76205;
   font-weight: 700;
 }
 @keyframes name {
@@ -258,8 +257,7 @@ input[type="checkbox"] {
 }
 .create {
   position: relative;
-  /* margin-bottom: 2rem; */
-  width: 40%;
+  width: 45%;
   margin: auto;
   background-color: #fff;
   padding: 0.2rem;
@@ -277,7 +275,7 @@ input[type="checkbox"] {
   border-radius: 0.2rem;
   background: conic-gradient(from var(--create), #f66205, transparent, #f76205);
   z-index: -1;
-  animation: create infinite linear 2s;
+  animation: create infinite linear 2.5s;
 }
 @keyframes create {
   0% {
@@ -361,13 +359,11 @@ label input:checked ~ .bubble::after {
 }
 .task .text input {
   width: 100%;
-  /* height: 1.5rem; */
   border-radius: 0.2rem;
   font-size: 1rem;
   font-weight: 700;
   font-size: 1.2rem;
   color: #453f68;
-  /* color: #313154; */
 }
 .task .text input:not(:read-only) {
   color: #b41643;
@@ -400,7 +396,6 @@ label input:checked ~ .bubble::after {
 .action button {
   padding: 0.3rem 0.7rem;
   display: block;
-  /* width: 100%; */
 }
 .action .edit {
   background-color: #1190bf;
@@ -408,11 +403,10 @@ label input:checked ~ .bubble::after {
   font-size: 1rem;
 }
 .action .delete {
-  background-color: #d03b1a;
+  background-color: #f76205;
   color: #fff;
   font-size: 1rem;
 }
-
 input:not(input[type="radio"]):not(input[type="checkbox"]) {
   border: none;
   outline: none;
@@ -424,7 +418,7 @@ input:not(input[type="radio"]):not(input[type="checkbox"]) {
   margin-top: 1.5rem;
 }
 #input::placeholder {
-  color: #dc3319;
+  color: #de4826;
   font-variant: small-caps;
 }
 

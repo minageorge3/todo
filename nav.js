@@ -15,10 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   name.addEventListener("change", (e) => {
-    // if (name.value === "" || !/^[a-zA-Z]+$/.test(name.value)) {
-    //   alert("only one name without spaces, please...");
-    //   return;
-    // }
     localStorage.setItem("username", e.target.value);
   });
   name.addEventListener("keydown", (e) => {
@@ -312,34 +308,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // xoGAME ><><><<><><><><<><><><><><>< xoxoxoxoxoxoxoxoxoxo
   // xoGAME ><><><<><><><><<><><><><><>< xoxoxoxoxoxoxoxoxoxo
-  // const light = document.getElementById("light");
-  // light.addEventListener("click", () => {
-  //   if (light.classList.contains("fa-solid")) {
-  //     change("light");
-  //   } else {
-  //     change("dark");
-  //   }
-  // });
-  // function change(mood) {
-  //   if (mood === "light") {
-  //     document.body.style.backgroundColor = "#dadada";
-  //     light.classList.remove("fa-solid");
-  //     light.classList.add("fa-regular");
-  //     light.style.color = "#000";
-  //     XOgrid.style.color = "#000";
-  //     localStorage.setItem("mood", "light");
-  //   } else {
-  //     XOgrid.style.backgroundColor = "#1b182cf4";
-  //     light.classList.add("fa-solid");
-  //     light.classList.remove("fa-regular");
-  //     light.style.color = "#fff";
-  //     XOgrid.style.color = "#fff";
-  //     localStorage.setItem("mood", "dark");
-  //   }
-  // }
-  // const getMood = localStorage.getItem("mood") || "dark";
-  // change(getMood);
-  //
   let boxes = document.querySelectorAll(".box");
   let turn = "x";
   let gameOver = false;
@@ -458,4 +426,3 @@ document.addEventListener("DOMContentLoaded", () => {
   hideXO();
   // xoGAME ><><><<><><><><<><><><><><><
 });
-// localStorage.clear()
