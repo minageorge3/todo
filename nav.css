@@ -40,22 +40,31 @@ main {
   height: 0.3rem;
   width: 2rem;
 }
-.hamburger span:nth-child(2){
+.hamburger span:nth-child(2) {
   position: relative;
 }
-.hamburger span:nth-child(2):after{
-  content: '';
+.hamburger span:nth-child(2):after {
+  content: "";
   width: 1.5rem;
-  height: .3rem;
+  height: 0.3rem;
   left: 0;
   background-color: #fff;
   position: absolute;
   animation: ham 1s ease-in-out infinite;
 }
 @keyframes ham {
-  0%{left:0;transform: rotate(180deg);}
-  50%{left:calc(100% - 1.5rem);transform: rotate(180deg)}
-  100%{left:0;transform: rotate(360deg)}
+  0% {
+    left: 0;
+    transform: rotate(180deg);
+  }
+  50% {
+    left: calc(100% - 1.5rem);
+    transform: rotate(180deg);
+  }
+  100% {
+    left: 0;
+    transform: rotate(360deg);
+  }
 }
 .hamburger span:nth-child(1) {
   height: 0.2rem;
@@ -233,11 +242,6 @@ main {
   top: 0.5rem;
   box-shadow: 0 0 5px #000;
 }
-#input {
-  margin: 0.5rem 0 2rem;
-  width: 100%;
-  padding: 0.5rem;
-}
 #form button {
   padding: 0.5rem 1rem;
   margin: 1.7rem 0 1rem;
@@ -336,8 +340,7 @@ label input:checked ~ .bubble::after {
   gap: 1rem;
   box-shadow: 0 0 3px #165798a9;
   cursor: pointer;
-  border-radius: .2rem;
-
+  border-radius: 0.2rem;
 }
 .task {
   display: flex;
@@ -391,7 +394,6 @@ label input:checked ~ .bubble::after {
   display: flex;
   align-items: center;
   gap: 1rem;
-  /* flex: 1; */
 }
 .action button {
   padding: 0.3rem 0.7rem;
@@ -413,18 +415,48 @@ input:not(input[type="radio"]):not(input[type="checkbox"]) {
   background: none;
   appearance: none;
 }
+/* form input */
 #input {
   border-bottom: 2px solid #1687de;
-  margin-top: 1.5rem;
+  font-size: 1rem;
+  margin: 1.5rem 0 2rem;
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 0;
 }
-#input::placeholder {
-  color: #de4826;
-  font-variant: small-caps;
+#form .allinput {
+  position: relative;
 }
-
-#input:focus {
-  border-bottom: 3px solid #e9095f;
+#form .allinput #label1 {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  color: #f76205;
+  transition: all 0.5s ease-in-out;
 }
+#form .allinput #input:focus + #label1,
+#form .allinput #input:valid + #label1 {
+  top: 0.3rem;
+  color: #107df2;
+}
+#form .allinput .underline {
+  width: 100%;
+  height: 0.12rem;
+  position: absolute;
+  left: 0;
+  bottom: 2rem;
+  background-color: #f76205;
+  transform: scaleX(0);
+  transition: 0.5s ease-in-out;
+}
+#form .allinput #input:focus {
+  border-bottom: 2px solid #052df7;
+}
+#form .allinput #input:focus ~ .underline,
+#form .allinput #input:valid ~ .underline {
+  transform: scaleX(1);
+  background-color: #f76205;
+}
+/* form input */
 button {
   position: relative;
   border: none;
@@ -502,7 +534,7 @@ body .xogame {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   width: 10rem;
-  margin: 1.5rem auto;
+  margin: 1rem auto;
   height: 5rem;
   position: relative;
 }
@@ -514,14 +546,10 @@ body .xogame {
 .xogame h5 {
   color: #1f88cf;
 }
-#light {
-  font-size: 1.4rem;
-  margin-right: 0.6rem;
-}
 .turn .turn-box {
   border: 3px solid #000000;
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .turn .turn-box:nth-child(even) {
@@ -548,8 +576,8 @@ body .xogame {
   grid-template-rows: repeat(3, 1fr);
   gap: 2px;
   border: 2px solid #d8d8d8;
-  width: 18rem;
-  height: 18rem;
+  width: 15.5rem;
+  height: 15.5rem;
   margin: 2rem auto 0;
   background-color: #222;
   padding: 0.3rem;

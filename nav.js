@@ -58,20 +58,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // media queriry
 
-  // close button
-  close.addEventListener("click", () => {
-    isMenuOpen = false;
-    bars.style.width = "0";
-    hamburger.style.visibility = "visible";
-  });
-  // close button
-
-  // close menu when click on page
+  // closing function
   const closeMenu = () => {
     isMenuOpen = false;
     bars.style.width = "0";
     hamburger.style.visibility = "visible";
   };
+  // closing function
+
+  // close button
+  close.addEventListener("click", () => {
+    closeMenu();
+  });
+  // close button
+
+  // close menu when click on page
   document.addEventListener("click", (event) => {
     if (
       isMenuOpen &&
