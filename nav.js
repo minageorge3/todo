@@ -295,8 +295,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const up = document.getElementById("up");
   window.addEventListener("scroll", () => {
+    let val = 0;
     if (window.scrollY >= 100) {
       up.style.display = "inline-block";
+      let hei =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      val = Math.round((window.scrollY * 100) / hei);
+      up.style.backgroundImage = `conic-gradient(rgb(243, 72, 10) ${val}% ,rgb(20, 126, 207) ${val}%)`;
     } else {
       up.style.display = "none";
     }
@@ -426,4 +432,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   hideXO();
   // xoGAME ><><><<><><><><<><><><><><><
+  // brogress bar
+  const progress = document.getElementById("progress");
+  window.addEventListener("scroll", () => {
+    let position = window.scrollY;
+    let value = 0;
+    if (position >= 0) {
+      let calcheight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      value = Math.round((position * 100) / calcheight);
+      progress.style.backgroundImage = `linear-gradient(to right ,rgb(159, 58, 28) ${value}% ,rgb(49, 104, 138) ${value}%)`;
+    }
+  });
+
+  // brogress bar
 });
