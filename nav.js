@@ -437,12 +437,15 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", () => {
     let position = window.scrollY;
     let value = 0;
-    if (position >= 0) {
+    if (position >= 100) {
+      progress.style.display='block'
       let calcheight =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
       value = Math.round((position * 100) / calcheight);
       progress.style.backgroundImage = `linear-gradient(to right ,rgb(159, 58, 28) ${value}% ,rgb(49, 104, 138) ${value}%)`;
+    }else{
+      progress.style.display='none'
     }
   });
 
